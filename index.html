@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkillVerse — 3D Progress</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="scene"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="grid"></div></div>
+<main>
+<header class="hero">
+ <div><div class="tag">PERSONAL GROWTH SYSTEM</div><h1>Skill<span>Verse</span></h1><p>Learn. Build. Track. Level up.</p></div>
+ <div class="clock" id="clock"></div>
+</header>
+
+<section class="hero-card glass tilt">
+ <div class="avatar">⚡</div><div class="hero-copy"><div class="mini">TODAY'S MISSION</div><h2 id="mission">Build your future, one skill at a time.</h2><p id="summary">0 learning activities logged today.</p></div>
+ <div class="streak"><b id="streak">0</b><small>DAY STREAK</small></div>
+</section>
+
+<nav class="tabs glass">
+ <button class="tab active" data-page="dashboard">◈ Dashboard</button>
+ <button class="tab" data-page="learn">✦ Learning</button>
+ <button class="tab" data-page="notes">✎ Today's Learnings</button>
+ <button class="tab" data-page="goals">◎ Goals</button>
+</nav>
+
+<section id="dashboard" class="page active">
+ <div class="section-head"><div><span class="tag">YOUR SKILLS</span><h2>Growth dashboard</h2></div><button class="primary" id="quickAdd">＋ Log learning</button></div>
+ <div class="skills" id="skills"></div>
+ <div class="grid2">
+  <div class="glass panel"><div class="panel-head"><h3>Today</h3><span id="todayCount">0 activities</span></div><div class="ring" id="ring"><div><b id="percent">0%</b><small>complete</small></div></div><div class="bar"><i id="bar"></i></div><p class="muted">Complete at least one learning activity every day.</p></div>
+  <div class="glass panel"><div class="panel-head"><h3>Recent activity</h3><span>Live</span></div><div id="activity" class="activity"></div></div>
+ </div>
+</section>
+
+<section id="learn" class="page">
+ <div class="section-head"><div><span class="tag">LEARNING LOG</span><h2>What did you work on?</h2></div></div>
+ <div class="learn-layout"><form class="glass form" id="learnForm">
+  <label>Skill<select id="skill"></select></label>
+  <label>What did you learn?<textarea id="learnText" required maxlength="300" placeholder="Example: Learned JavaScript arrays and practiced map()..."></textarea></label>
+  <label>Minutes spent<input id="minutes" type="number" min="1" max="1440" value="30"></label>
+  <button class="primary">Save learning ✦</button>
+ </form><div class="glass panel"><h3>Skill levels</h3><div id="levels"></div></div></div>
+</section>
+
+<section id="notes" class="page">
+ <div class="section-head"><div><span class="tag">DAILY JOURNAL</span><h2>Aaj Maine Kya Sikha?</h2></div><button class="primary" id="saveNote">Save note</button></div>
+ <div class="glass journal"><textarea id="dailyNote" placeholder="Write everything you learned today..."></textarea><div class="journal-foot"><span id="noteCount">0 characters</span><span>Saved locally on this device</span></div></div>
+ <div class="glass panel"><div class="panel-head"><h3>Learning history</h3><button class="danger" id="clearLogs">Clear history</button></div><div id="history"></div></div>
+</section>
+
+<section id="goals" class="page">
+ <div class="section-head"><div><span class="tag">FUTURE YOU</span><h2>Goals</h2></div></div>
+ <form class="glass goal-form" id="goalForm"><input id="goalInput" placeholder="Example: Learn React fundamentals" required><button class="primary">Add goal</button></form>
+ <div id="goalsList" class="goals"></div>
+</section>
+<footer>SkillVerse • Your progress stays in your browser</footer>
+</main>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script></body></html>
